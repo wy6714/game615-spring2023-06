@@ -16,10 +16,17 @@
 
 **Resources:**
 Wheelchair by Poly by Google [CC-BY] via Poly Pizza
+
 Ambulance by Poly by Google [CC-BY] via Poly Pizza
+
 Pill by Poly by Google [CC-BY] via Poly Pizza
+
 Inn by Poly by Google [CC-BY] via Poly Pizza
+
 Cottage by Poly by Google [CC-BY] via Poly Pizza
+
 Trees by Poly by Google [CC-BY] via Poly Pizza
+
 Fence by Poly by Google [CC-BY] via Poly Pizza
+
 Zombie by cs_aaron [CC-BY] via Poly Pizza
