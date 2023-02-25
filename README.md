@@ -2,7 +2,7 @@
 
 **Exercise 6:** _"AAAAA"_
 
-**Team:** Yifei and MingHeng
+**Team:** Yifei and Mingheng
 
 **How to play:** 
  
