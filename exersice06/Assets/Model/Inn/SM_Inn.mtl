@@ -1,0 +1,54 @@
+newmtl SM_Inn:initialShadingGroup
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl SM_Inn:lambert2SG
+illum 4
+Kd 0.12 0.08 0.04
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl SM_Inn:lambert2SG2
+illum 4
+Kd 0.03 0.03 0.03
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl SM_Inn:lambert3SG
+illum 4
+Kd 0.25 0.25 0.20
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl SM_Inn:lambert4SG
+illum 4
+Kd 0.06 0.07 0.07
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl SM_Inn:lambert5SG
+illum 4
+Kd 0.13 0.09 0.04
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl SM_Inn:lambert6SG
+illum 4
+Kd 0.32 0.19 0.17
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl SM_Inn:lambert7SG
+illum 4
+Kd 0.05 0.04 0.01
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl SM_Inn:lambert8SG
+illum 4
+Kd 0.15 0.19 0.22
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
