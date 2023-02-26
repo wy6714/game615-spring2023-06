@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SocialPlatforms.Impl;
 
 
 public class PlayerController : MonoBehaviour
@@ -10,6 +12,11 @@ public class PlayerController : MonoBehaviour
     public GameManager gm;
     public NavMeshAgent nma;
 
+    //UI
+    int score = 0;
+    public TMP_Text scoreText;
+
+    //Coin
     public int coinOnScene =0;
     public int coinInTotal = 0;
     //public float coinTimeLeft = 8f;
@@ -22,6 +29,7 @@ public class PlayerController : MonoBehaviour
         // the object via code (rather than making the NavMeshAgent variable
         // public and assigning a value to it using the Unity Inspector).
         nma = gameObject.GetComponent<NavMeshAgent>();
+        gm.CreateEnemies(15);
     }
 
     // Update is called once per frame
@@ -63,7 +71,9 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(other.gameObject);
             coinOnScene = coinOnScene - 1;
-            gm.IncrementScore("Player: ");
+            score = score + 1;
+            scoreText.text = "Player: " + score.ToString() + "/15";
+            
         }
     }
 

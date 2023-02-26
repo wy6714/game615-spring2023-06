@@ -5,9 +5,9 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    int score = 0;
-    public TMP_Text scoreText;
+    
     public PlayerController player;
+    public GameObject enemyObj;
 
     // Start is called before the first frame update
     void Start()
@@ -46,15 +46,22 @@ public class GameManager : MonoBehaviour
     // would need to have a reference to this GameManager object. This is most
     // easily accomplished by creating a 'public GameManager gm;' in PlayerController
     // and dragging and dropping the GameManager object into the inspector.
-    public void IncrementScore(string inputText)
+    public void IncrementScore(TMP_Text scoreText,string inputText)
     {
-        score = score + 1;
-        scoreText.text = inputText + score.ToString() + "/15";
+        
     }
 
     public static Vector3 getRandomPosition(float a, float b, float c, float d)
     {
         Vector3 randomPosition = new Vector3(Random.Range(a, b), 2, Random.Range(c, d));
         return randomPosition;
+    }
+    public void CreateEnemies(int number)
+    {
+        for(int i=0; i < number; i++)
+        {
+            GameObject enemy = Instantiate(enemyObj, getRandomPosition(-84.8f, 75.2f, -91.3f, 87.5f), Quaternion.identity);
+        }
+        
     }
 }
