@@ -51,4 +51,10 @@ public class GameManager : MonoBehaviour
         score = score + 1;
         scoreText.text = score.ToString();
     }
+
+    public static Vector3 getRandomPosition(float a, float b, float c, float d)
+    {
+        Vector3 randomPosition = new Vector3(Random.Range(a, b), 2, Random.Range(c, d));
+        return randomPosition;
+    }
 }

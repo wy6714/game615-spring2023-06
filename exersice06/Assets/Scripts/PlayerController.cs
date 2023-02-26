@@ -10,6 +10,11 @@ public class PlayerController : MonoBehaviour
     public GameManager gm;
     public NavMeshAgent nma;
 
+    public int coinOnScene =0;
+    public int coinInTotal = 0;
+    //public float coinTimeLeft = 8f;
+    public GameObject pill; //for dragging to slot
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +34,16 @@ public class PlayerController : MonoBehaviour
         // Raise the position up 1.5 units
         rayStartPos.y = rayStartPos.y + 1.5f;
         Debug.DrawRay(rayStartPos, transform.forward * 10);
+
+        //3 coin show
+        while(coinOnScene < 3 && coinInTotal < 15)
+        {
+      
+            GameObject coins = Instantiate(pill, GameManager.getRandomPosition(-84.8f, 75.2f, -91.3f, 87.5f), Quaternion.identity);
+            coinOnScene++;
+            coinInTotal++;
+        }
+        
     }
 
 
@@ -47,7 +62,11 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Coin"))
         {
             Destroy(other.gameObject);
+            coinOnScene = coinOnScene - 1;
             gm.IncrementScore();
         }
     }
+
+    
+
 }
