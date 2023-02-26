@@ -46,10 +46,10 @@ public class GameManager : MonoBehaviour
     // would need to have a reference to this GameManager object. This is most
     // easily accomplished by creating a 'public GameManager gm;' in PlayerController
     // and dragging and dropping the GameManager object into the inspector.
-    public void IncrementScore()
+    public void IncrementScore(string inputText)
     {
         score = score + 1;
-        scoreText.text = "Player: " + score.ToString() + "/15";
+        scoreText.text = inputText + score.ToString() + "/15";
     }
 
     public static Vector3 getRandomPosition(float a, float b, float c, float d)

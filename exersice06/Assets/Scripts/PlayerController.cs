@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(other.gameObject);
             coinOnScene = coinOnScene - 1;
-            gm.IncrementScore();
+            gm.IncrementScore("Player: ");
         }
     }
 
