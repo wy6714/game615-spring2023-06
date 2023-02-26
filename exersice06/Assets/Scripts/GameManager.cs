@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
     public void IncrementScore()
     {
         score = score + 1;
-        scoreText.text = score.ToString();
+        scoreText.text = "Player: " + score.ToString() + "/15";
     }
 
     public static Vector3 getRandomPosition(float a, float b, float c, float d)
