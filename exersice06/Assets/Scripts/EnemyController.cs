@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
     float newPositionTimer = 0;
 
     //UI
-    int score = 0;
+    public int score = 0;
     public TMP_Text scoreText;
 
     // Start is called before the first frame update
@@ -52,7 +52,7 @@ public class EnemyController : MonoBehaviour
         }
         return finalPosition;
     }
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         
         if (other.CompareTag("Coin"))
@@ -60,7 +60,8 @@ public class EnemyController : MonoBehaviour
             Destroy(other.gameObject);
             pc.coinOnScene = pc.coinOnScene - 1;
             score = score + 1;
-            scoreText.text = "Enemy: " + score.ToString() + "/15";
+            scoreText.text = "Enemy: " + score.ToString() + "/8";
+            gm.CreateEnemies(1);
         }
     }
 }

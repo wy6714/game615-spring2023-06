@@ -11,16 +11,23 @@ public class PlayerController : MonoBehaviour
     //public GameObject gmObj;
     public GameManager gm;
     public NavMeshAgent nma;
+    public EnemyController ec;
 
     //UI
     int score = 0;
     public TMP_Text scoreText;
+    public TMP_Text winText;
+    public TMP_Text lossText;
 
     //Coin
     public int coinOnScene =0;
     public int coinInTotal = 0;
     //public float coinTimeLeft = 8f;
     public GameObject pill; //for dragging to slot
+
+    //particle
+    public ParticleSystem winParticle;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +37,12 @@ public class PlayerController : MonoBehaviour
         // public and assigning a value to it using the Unity Inspector).
         nma = gameObject.GetComponent<NavMeshAgent>();
         gm.CreateEnemies(15);
+        winText.enabled = false;
+        lossText.enabled = false;
+        winParticle.Stop();
+        
+        
+       
     }
 
     // Update is called once per frame
@@ -44,14 +57,39 @@ public class PlayerController : MonoBehaviour
         Debug.DrawRay(rayStartPos, transform.forward * 10);
 
         //3 coin show
-        while(coinOnScene < 3 && coinInTotal < 15)
+        while(coinOnScene < 3 && coinInTotal < 11)
         {
       
             GameObject coins = Instantiate(pill, GameManager.getRandomPosition(-84.8f, 75.2f, -91.3f, 87.5f), Quaternion.identity);
             coinOnScene++;
             coinInTotal++;
         }
-        
+
+        if(score + ec.score == 7) 
+        {
+            if (score > ec.score)
+            {
+                
+                winText.enabled = true;
+            }else if(score < ec.score)
+            {
+                lossText.enabled = true;
+            }
+            
+        }
+        if (score + ec.score == 6) 
+        {
+            if (score > ec.score)
+            {
+
+                winParticle.Play();
+
+            }
+
+        }
+
+
+
     }
 
 
@@ -72,8 +110,9 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
             coinOnScene = coinOnScene - 1;
             score = score + 1;
-            scoreText.text = "Player: " + score.ToString() + "/15";
-            
+            scoreText.text = "Player: " + score.ToString() + "/8";
+            gm.CreateEnemies(1);
+
         }
     }
 
