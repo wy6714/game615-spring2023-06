@@ -14,21 +14,22 @@ public class PlayerController : MonoBehaviour
     public EnemyController ec;
 
     //UI
-    int score = 0;
+    int score;
     public TMP_Text scoreText;
     public TMP_Text winText;
     public TMP_Text lossText;
 
     //Coin
-    public int coinOnScene =0;
-    public int coinInTotal = 0;
+    public int coinOnScene;
+    public int coinInTotal;
     //public float coinTimeLeft = 8f;
     public GameObject pill; //for dragging to slot
 
     //particle
     public ParticleSystem winParticle;
-    
 
+    //wining condition
+    public bool loss;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,9 +38,13 @@ public class PlayerController : MonoBehaviour
         // public and assigning a value to it using the Unity Inspector).
         nma = gameObject.GetComponent<NavMeshAgent>();
         gm.CreateEnemies(15);
+        coinOnScene = 0;
+        coinInTotal = 0;
+        score = 0;
         winText.enabled = false;
         lossText.enabled = false;
         winParticle.Stop();
+        loss = false;
         
         
        
@@ -73,6 +78,7 @@ public class PlayerController : MonoBehaviour
                 winText.enabled = true;
             }else if(score < ec.score)
             {
+                loss = true;
                 lossText.enabled = true;
             }
             

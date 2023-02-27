@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     //UI
     public int score = 0;
     public TMP_Text scoreText;
+    Vector3 temp;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,19 @@ public class EnemyController : MonoBehaviour
             // Compute a random position and assign it to the NavMeshAgent.
             Vector3 randomPosition = RandomNavmeshLocation(Random.Range(10, 30));
             nma.SetDestination(randomPosition);
+        }
+
+        if(pc.loss == true)
+        {
+            temp = transform.localScale;
+            temp.x += Time.deltaTime;
+            temp.y += Time.deltaTime;
+            temp.z += Time.deltaTime;
+            transform.localScale = temp;
+            if(temp.x > 4)
+            {
+                pc.loss = false;
+            }
         }
     }
 
