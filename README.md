@@ -10,7 +10,7 @@
 **The goal:** 
  
 
-[**Playable link to game**]() 
+[**Playable link to game**](https://wy6714.github.io/game615-spring2023-06/exersice06/play/) 
 
 [**Link to source (GitHub page)**](https://github.com/wy6714/game615-spring2023-06/tree/main/exersice06) 
 
