@@ -1,14 +1,14 @@
 # game615-spring2023-06
 
-**Exercise 6:** _"AAAAA"_
+**Exercise 6:** _"Untitled"_
 
 **Team:** Yifei and Mingheng
 
 **How to play:** 
- 
+ Left click to move. Passing through the pill to collect it.
 
 **The goal:** 
- 
+ Collecting the pill to win before zombie does.
 
 [**Playable link to game**](https://wy6714.github.io/game615-spring2023-06/exersice06/play/) 
 
